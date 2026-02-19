@@ -1,0 +1,18 @@
+{
+  "name": "whatsapp-telegram-bridge",
+  "version": "1.0.0",
+  "description": "Bridge zwischen WhatsApp und Telegram für MagicMirror",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": ["whatsapp", "telegram", "bridge", "magicmirror"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "whatsapp-web.js": "^1.23.0",
+    "qrcode-terminal": "^0.12.0",
+    "axios": "^1.6.0",
+    "dotenv": "^16.4.5"
+  }
+}
