@@ -54,9 +54,10 @@ Temporary Items
 .directory
 .Trash-*
 
-# Ignore all modules except the default modules.
+# Ignore all modules except the default modules and custom MMM- modules.
 /modules/*
 !/modules/default
+!/modules/MMM-*/
 
 # Ignore changes to the custom css files but keep the sample and main.
 /css/*
@@ -68,6 +69,10 @@ Temporary Items
 # Ignore users config file but keep the sample.
 config
 !config/config.js.sample
+
+# Ignore PM2 config but keep the sample.
+ecosystem.config.js
+!ecosystem.config.js.sample
 
 # Vim
 ## swap

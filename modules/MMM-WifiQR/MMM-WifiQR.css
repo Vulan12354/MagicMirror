@@ -1,0 +1,27 @@
+/* MMM-WifiQR styles */
+
+.wifiqr-wrapper {
+  text-align: center;
+}
+
+.wifiqr-label {
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.wifiqr-img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  background: #fff;
+  padding: 4px;
+}
+
+.wifiqr-creds {
+  margin-top: 8px;
+  line-height: 1.6;
+}

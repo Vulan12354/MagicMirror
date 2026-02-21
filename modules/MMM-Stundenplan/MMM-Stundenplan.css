@@ -1,0 +1,54 @@
+.stundenplan-wrapper {
+  text-align: center;
+}
+
+.stundenplan-title {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.stundenplan-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.stundenplan-table th,
+.stundenplan-table td {
+  padding: 8px 12px;
+  border: 1px solid #333;
+  text-align: center;
+}
+
+.stundenplan-header-time {
+  background-color: rgb(255 255 255 / 5%);
+}
+
+.stundenplan-header-day {
+  background-color: rgb(255 255 255 / 5%);
+  font-weight: bold;
+  padding: 10px 15px;
+}
+
+.stundenplan-time {
+  font-size: 0.85em;
+  white-space: nowrap;
+  background-color: rgb(255 255 255 / 3%);
+  font-weight: 500;
+}
+
+.stundenplan-subject {
+  padding: 8px 15px;
+}
+
+.stundenplan-today {
+  color: var(--color-text-bright, #fff);
+  background-color: rgb(255 255 255 / 10%) !important;
+}
+
+.stundenplan-today-cell {
+  background-color: rgb(255 255 255 / 8%);
+  font-weight: 500;
+}

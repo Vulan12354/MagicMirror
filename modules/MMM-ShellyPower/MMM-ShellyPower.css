@@ -1,0 +1,52 @@
+/* MMM-ShellyPower styles */
+
+.shelly-power {
+  text-align: left;
+}
+
+.shelly-title {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.shelly-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.shelly-table td {
+  padding: 2px 6px;
+  vertical-align: middle;
+}
+
+.shelly-label {
+  color: #aaa;
+  white-space: nowrap;
+  padding-right: 12px;
+}
+
+.shelly-value {
+  color: #fff;
+  font-weight: bold;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* Grün beim Produzieren (negativer apower-Wert) */
+.shelly-producing {
+  color: #4caf50;
+}
+
+/* Rot beim Verbrauchen */
+.shelly-consuming {
+  color: #f44336;
+}
+
+.shelly-loading,
+.shelly-error {
+  margin-top: 4px;
+}

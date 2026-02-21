@@ -1,18 +1,25 @@
 {
-  "name": "whatsapp-telegram-bridge",
-  "version": "1.0.0",
-  "description": "Bridge zwischen WhatsApp und Telegram für MagicMirror",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
-  "keywords": ["whatsapp", "telegram", "bridge", "magicmirror"],
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "whatsapp-web.js": "^1.23.0",
-    "qrcode-terminal": "^0.12.0",
-    "axios": "^1.6.0",
-    "dotenv": "^16.4.5"
-  }
+	"name": "whatsapp-telegram-bridge",
+	"version": "2.0.0",
+	"description": "Bridge zwischen WhatsApp und Telegram für MagicMirror (ohne Browser)",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js"
+	},
+	"keywords": [
+		"whatsapp",
+		"telegram",
+		"bridge",
+		"magicmirror",
+		"baileys"
+	],
+	"author": "",
+	"license": "MIT",
+	"dependencies": {
+		"@whiskeysockets/baileys": "^6.7.0",
+		"qrcode-terminal": "^0.12.0",
+		"axios": "^1.6.0",
+		"dotenv": "^16.4.5",
+		"pino": "^8.19.0"
+	}
 }

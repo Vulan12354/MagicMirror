@@ -1,0 +1,37 @@
+module.exports = {
+  apps: [
+    {
+      name: 'magicmirror',
+      script: 'js/electron.js',
+      cwd: '/home/YOUR_USER/MagicMirror',  // Adjust this path!
+      interpreter: '/home/YOUR_USER/MagicMirror/node_modules/.bin/electron',  // Adjust this path!
+      interpreter_args: '',
+      env: {
+        NODE_ENV: 'production',
+        DISPLAY: ':0',
+        HOME: '/home/YOUR_USER',  // Adjust this path!
+        USER: 'YOUR_USER'  // Adjust your username!
+      },
+      autorestart: true,
+      max_restarts: 10,
+      min_uptime: '10s',
+      error_file: '/home/YOUR_USER/.pm2/logs/magicmirror-error.log',  // Adjust this path!
+      out_file: '/home/YOUR_USER/.pm2/logs/magicmirror-out.log',  // Adjust this path!
+      log_date_format: 'YYYY-MM-DD HH:mm:ss'
+    },
+    {
+      name: 'whatsapp-bridge',
+      script: 'index.js',
+      cwd: '/home/YOUR_USER/MagicMirror/whatsapp-bridge',  // Adjust this path!
+      interpreter: 'node',
+      autorestart: true,
+      max_restarts: 10,
+      min_uptime: '5s',
+      wait_ready: true,
+      listen_timeout: 10000,
+      error_file: '/home/YOUR_USER/.pm2/logs/whatsapp-bridge-error.log',  // Adjust this path!
+      out_file: '/home/YOUR_USER/.pm2/logs/whatsapp-bridge-out.log',  // Adjust this path!
+      log_date_format: 'YYYY-MM-DD HH:mm:ss'
+    }
+  ]
+};

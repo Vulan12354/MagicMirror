@@ -1,0 +1,15 @@
+.essensplan-wrapper {
+  padding: 10px;
+}
+
+.essensplan-wrapper table {
+  border-spacing: 0 5px;
+}
+
+.essensplan-wrapper .day {
+  color: #999;
+}
+
+.essensplan-wrapper .meal {
+  color: #fff;
+}

@@ -27,11 +27,8 @@ let config = {
 	httpsPrivateKey: "",	// HTTPS private key path, only require when useHttps is true
 	httpsCertificate: "",	// HTTPS Certificate path, only require when useHttps is true
 
-	language: "en",
-	locale: "en-US",   // this variable is provided as a consistent location
-			   // it is currently only used by 3rd party modules. no MagicMirror code uses this value
-			   // as we have no usage, we  have no constraints on what this field holds
-			   // see https://en.wikipedia.org/wiki/Locale_(computer_software) for the possibilities
+	language: "de",
+	locale: "de-DE",
 
 	logLevel: ["INFO", "LOG", "WARN", "ERROR"], // Add "DEBUG" for even more logging
 	timeFormat: 24,
@@ -51,21 +48,56 @@ let config = {
 		},
 		{
 			module: "calendar",
-			header: "US Holidays",
 			position: "top_left",
+			classes: "hidden",
 			config: {
+				broadcastPastEvents: true,
+				maximumEntries: 100,
+				maximumNumberOfDays: 365,
 				calendars: [
 					{
-						fetchInterval: 7 * 24 * 60 * 60 * 1000,
-						symbol: "calendar-check",
-						url: "https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics"
+						fetchInterval: 15 * 60 * 1000,
+						symbol: "calendar",
+						name: "google_calendar",
+						color: "#4285F4",
+						url: "YOUR_GOOGLE_CALENDAR_ICAL_URL_HERE"
 					}
 				]
 			}
 		},
 		{
-			module: "compliments",
-			position: "lower_third"
+			module: "MMM-CalendarExt3",
+			position: "bottom_bar",
+			title: "Kalender",
+			config: {
+				mode: "week",
+				weekIndex: 0,
+				weeksInView: 2,
+				instanceId: "googleCalendar",
+				locale: "de-DE",
+				firstDayOfWeek: 1,
+				maxEventLines: 6,
+				fontSize: "20px",
+				eventHeight: "24px",
+				cellDateOptions: {
+					month: "short",
+					day: "numeric"
+				},
+				calendarSet: ["google_calendar"],
+				waitFetch: 10000
+			}
+		},
+		{
+			module: "MMM-ImagesPhotos",
+			position: "top_left",
+			config: {
+				opacity: 0.9,
+				animationSpeed: 500,
+				updateInterval: 10000,
+				maxHeight: "400px",
+				maxWidth: "350px",
+				sequential: false
+			}
 		},
 		{
 			module: "weather",
@@ -73,19 +105,65 @@ let config = {
 			config: {
 				weatherProvider: "openmeteo",
 				type: "current",
-				lat: 40.776676,
-				lon: -73.971321
+				lat: 52.5200,  // Berlin coordinates as example
+				lon: 13.4050
 			}
 		},
 		{
 			module: "weather",
 			position: "top_right",
-			header: "Weather Forecast",
+			header: "Wettervorhersage",
 			config: {
 				weatherProvider: "openmeteo",
 				type: "forecast",
-				lat: 40.776676,
-				lon: -73.971321
+				lat: 52.5200,  // Berlin coordinates as example
+				lon: 13.4050
+			}
+		},
+		{
+			module: "MMM-Essensplan",
+			position: "top_right"
+		},
+		{
+			module: "MMM-WifiQR",
+			position: "top_center",
+			config: {
+				ssid: "YOUR_WIFI_SSID",
+				password: "YOUR_WIFI_PASSWORD",
+				encryption: "WPA",
+				label: "WLAN",
+				size: 100,
+				showLabel: true,
+				showCredentials: false,
+			}
+		},
+		{
+			module: "MMM-ShellyPower",
+			position: "top_left",
+			header: "Balkonkraftwerk",
+			config: {
+				shellyIp: "192.168.1.100",  // Example IP - replace with your Shelly IP
+				updateInterval: 10 * 1000,
+				label: "Balkonkraftwerk",
+				showPower: true,
+				showDailyEnergy: true,
+				showTotalEnergy: true,
+			}
+		},
+		{
+			module: "MMM-Stundenplan",
+			position: "upper_third",
+			classes: "stundenplan-left",
+			config: {
+				title: "Kind 1",
+				times: ["08:00-08:45", "08:50-09:35", "09:55-10:40", "10:45-11:30"],
+				schedule: {
+					"Mo": ["Mathe", "Deutsch", "Sport", "Englisch"],
+					"Di": ["Englisch", "Mathe", "Kunst", "Geschichte"],
+					"Mi": ["Deutsch", "Sport", "Mathe", "Chemie"],
+					"Do": ["Bio", "Englisch", "Mathe", "Deutsch"],
+					"Fr": ["Geschichte", "Chemie", "Sport", "Mathe"]
+				}
 			}
 		},
 		{
@@ -94,14 +172,34 @@ let config = {
 			config: {
 				feeds: [
 					{
-						title: "New York Times",
-						url: "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+						title: "Nachrichten",
+						url: "https://www.tagesschau.de/xml/rss2"  // Example feed
 					}
 				],
 				showSourceTitle: true,
 				showPublishDate: true,
+				showDescription: true,
+				wrapDescription: true,
+				truncDescription: true,
+				lengthDescription: 1000,
 				broadcastNewsFeeds: true,
 				broadcastNewsUpdates: true
+			}
+		},
+		{
+			module: "MMM-Stundenplan",
+			position: "upper_third",
+			classes: "stundenplan-right",
+			config: {
+				title: "Kind 2",
+				times: ["08:00-08:45", "08:50-09:35", "09:55-10:40", "10:45-11:30"],
+				schedule: {
+					"Mo": ["Englisch", "Physik", "Deutsch", "Mathe"],
+					"Di": ["Mathe", "Sport", "Bio", "Englisch"],
+					"Mi": ["Deutsch", "Mathe", "Musik", "Geschichte"],
+					"Do": ["Sport", "Englisch", "Chemie", "Deutsch"],
+					"Fr": ["Mathe", "Deutsch", "Englisch", "Kunst"]
+				}
 			}
 		},
 	]

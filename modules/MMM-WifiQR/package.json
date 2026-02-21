@@ -1,0 +1,9 @@
+{
+	"name": "mmm-wifiqr",
+	"version": "1.0.0",
+	"description": "MagicMirror² Modul: WLAN QR-Code",
+	"main": "MMM-WifiQR.js",
+	"dependencies": {
+		"qrcode": "^1.5.4"
+	}
+}
