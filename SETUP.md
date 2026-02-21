@@ -94,6 +94,7 @@ Folgende Custom Module sind enthalten:
 - **MMM-CalendarExt3**: Erweiterter Kalender mit Wochen- und Monatsansicht
 - **MMM-Essensplan**: Wochenplan für Essen (über WhatsApp steuerbar)
 - **MMM-ImagesPhotos**: Diashow von Bildern aus einem Ordner
+- **MMM-PIR-Sensor**: Bewegungsmelder mit automatischer Bildschirmsteuerung (siehe [MMM-PIR-Sensor/README.md](modules/MMM-PIR-Sensor/README.md))
 - **MMM-ShellyPower**: Anzeige von Shelly-Plug-Daten (z.B. Balkonkraftwerk)
 - **MMM-Stundenplan**: Schulstundenplan-Anzeige
 - **MMM-WifiQR**: QR-Code für WiFi-Zugang

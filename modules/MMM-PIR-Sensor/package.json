@@ -1,0 +1,11 @@
+{
+  "name": "MMM-PIR-Sensor",
+  "version": "1.0.0",
+  "description": "PIR motion sensor module for MagicMirror with screen control",
+  "main": "MMM-PIR-Sensor.js",
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "onoff": "^6.0.3"
+  }
+}

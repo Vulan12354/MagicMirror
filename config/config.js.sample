@@ -43,6 +43,15 @@ let config = {
 			position: "top_bar"
 		},
 		{
+			module: "MMM-PIR-Sensor",
+			position: "bottom_right",
+			config: {
+				sensorPin: 4,              // GPIO Pin (BCM numbering)
+				powerSavingDelay: 120,     // Timeout in seconds
+				supportCEC: true           // HDMI-CEC support
+			}
+		},
+		{
 			module: "clock",
 			position: "top_left"
 		},
